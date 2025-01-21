@@ -1,0 +1,73 @@
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  db: goblog_db
+  config: "?charset=utf8mb4&parseTime=True&loc=Local"
+  user: root
+  passwd: "123456"
+  log_level: dev
+logger:
+  level: info
+  prefix: '[goblog]'
+  director: log
+  show_line: true
+  log_in_console: true
+system:
+  host: 0.0.0.0
+  port: 8080
+  env: release
+site_info:
+  created_at: "2002-06-20"
+  bei_an: 暂无
+  title: koazy_0
+  qq_image: /uploads/file/admin/qq_20230930151442.png
+  version: 1.2.3
+  email: koazy_0@163.com
+  wechat_image: /uploads/file/admin/wechat_20230930151521.png
+  name: koazy_0
+  job: 苦b学生
+  addr: 四川成都
+  slogan: go_blog
+  slogan_en: go_blog
+  web: https://space.bilibili.com/1459104794
+  bilibili_url: https://space.bilibili.com/1459104794
+  gitee_url: https://space.bilibili.com/1459104794
+  github_url: https://space.bilibili.com/1459104794
+qq:
+  app_id: '******'
+  key: '******'
+  redirect: http://blog.fengfengzhidao.com/login?flag=qq
+qi_niu:
+  enable: true
+  access_key: XzTMIT5vXmN1ptWCqki3tTaAie7nRyg1EjK6hzWq
+  secret_key: -TLpYPgr9PnVA8oIZ9l2ly5eCDSp7JRcQAXFak3Q
+  bucket: goblog-uploadfile
+  cdn: http://snz1tjj5p.hb-bkt.clouddn.com
+  zone: z1 #华北机房，具体可以在storage.ZoneHuabei中查找
+  prefix: "1001"
+  size: 6
+email:
+  host: smtp.qq.com
+  port: 465 #默认为25，使用ssl为465，tls为587
+  user: 3128602014@qq.com  #发件人邮箱
+  password: gchaatqqzkredehe
+  default_from_email: koazy_0 #发件人名字
+  use_ssl: true
+  user_tls: false
+jwt:
+  secret: "testSecretkey123"
+  expires: 20
+  issuer: "1234"
+uploads:
+  size: 2
+  path: uploads
+redis:
+  ip: 127.0.0.1
+  port: 6379
+  password: testredis
+  pool_size: 100
+es:
+  ip: 127.0.0.1
+  port: 9200
+  user: ""
+  password: ""
