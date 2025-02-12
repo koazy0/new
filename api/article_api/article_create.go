@@ -117,6 +117,9 @@ func (ArticleApi) ArticleCreateView(c *gin.Context) {
 		Tags:         cr.Tags,
 	}
 
+	if article.ISExistData() {
+		res.FailWithMessage("文章已存在", c)
+	}
 	err = article.Create()
 	if err != nil {
 		global.Log.Error(err)

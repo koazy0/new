@@ -17,6 +17,7 @@ type ArticleModel struct {
 
 	// 在ES中为text文档属性
 	Title    string `json:"title"`              // 文章标题
+	Keyword  string `json:"keyword,omit(list)"` //关键字
 	Abstract string `json:"abstract"`           // 文章简介
 	Content  string `json:"content,omit(list)"` // 文章内容
 	// 指定了忽略特定字段
@@ -62,6 +63,9 @@ func (ArticleModel) Mapping() string {
       },
       "keyword": {
         "type": "keyword"
+      },
+	  "abstract": {
+        "type": "text"
       },
       "content": {
         "type": "text"

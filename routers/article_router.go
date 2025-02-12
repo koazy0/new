@@ -10,5 +10,7 @@ func (r RouterGroup) ArticleRouter() {
 	r.POST("articles", middlewares.JwtAuth(), adticle_api.ArticleCreateView)
 	r.GET("articles", adticle_api.ArticleListView)
 	r.GET("articles/detail", adticle_api.ArticleDetailByTitleView)
+	r.GET("articles/calendar", adticle_api.ArticleCalendarView)
 	r.GET("articles/:id", adticle_api.ArticleDetailView)
+
 }

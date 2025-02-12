@@ -24,6 +24,13 @@ func (ArticleApi) ArticleListView(c *gin.Context) {
 	}
 
 	// 以list为过滤字过滤掉content字段，对应代码为`json:"content,omit(list)"`
-	retlist := filter.Omit("list", list)
-	res.OKWithList(retlist, int64(count), c)
+	data := filter.Omit("list", list)
+
+	// 处理filter空值问题
+	_list, _ := data.(filter.Filter)
+	if string(_list.MustMarshalJSON()) == "{}" {
+		list = make([]models.ArticleModel, 0)
+		res.OKWithList(list, int64(count), c)
+	}
+	res.OKWithList(data, int64(count), c)
 }
