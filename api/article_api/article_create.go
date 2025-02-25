@@ -9,6 +9,7 @@ import (
 	"goblog_server/models"
 	"goblog_server/models/ctype"
 	"goblog_server/models/res"
+	"goblog_server/service/es_ser"
 	"goblog_server/utils/jwts"
 	"math/rand"
 	"strings"
@@ -126,6 +127,7 @@ func (ArticleApi) ArticleCreateView(c *gin.Context) {
 		res.FailWithMessage(err.Error(), c)
 		return
 	}
+	go es_ser.AsyncArticleByFullText(article.ID, article.Title, article.Content)
 	res.OkWithMessage("文章发布成功", c)
 
 }

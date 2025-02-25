@@ -29,6 +29,7 @@ func InitRouter() *gin.Engine {
 	routerGroupApp.MenusRouter()    // 在族中添加菜单配置API
 	routerGroupApp.UserRouter()     // 在族中添加用户配置API
 	routerGroupApp.ArticleRouter()  // 在族中添加文章配置API
+	routerGroupApp.DiggRouter()     // 在族中添加点赞配置API
 
 	// 设置静态目录
 	router.GET("/static/uploads/*filepath", HandleStaticPictures)

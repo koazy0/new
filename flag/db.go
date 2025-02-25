@@ -19,6 +19,7 @@ func Makemigrations() {
 			&models.UserModel{},
 			&models.CommentModel{},
 			//&models.ArticleModel{}, //用ES存
+			&models.UserCollectModel{},
 			&models.MenuModel{},
 			&models.MenuImageModel{},
 			&models.FeedBackModel{},
