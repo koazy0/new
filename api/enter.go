@@ -3,6 +3,7 @@ package api
 import (
 	"goblog_server/api/advert_api"
 	"goblog_server/api/article_api"
+	"goblog_server/api/comment_api"
 	"goblog_server/api/digg_api"
 	"goblog_server/api/images_api"
 	"goblog_server/api/menu_api"
@@ -20,6 +21,7 @@ type ApiGroup struct {
 	MessageApi  message_api.MessageApi
 	ArticleApi  article_api.ArticleApi
 	DiggApi     digg_api.DiggApi
+	CommentApi  comment_api.CommentApi
 }
 
 var Apigroup = new(ApiGroup)

@@ -30,6 +30,7 @@ func InitGorm() *gorm.DB {
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{ // gorm 标准的打开方式
 		Logger: mysqlLogger,
+		//DisableForeignKeyConstraintWhenMigrating: true, //忽略外键检查，主要是删评论用
 	})
 	if err != nil {
 		global.Log.Fatalf("[%s] mysql连接失败", dsn)
